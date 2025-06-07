@@ -66,7 +66,7 @@ const Navbar = () => {
                     <img
                         src={assets.menuIcon}
                         alt="menu"
-                        className={`h-6 w-6 cursor-pointer ${isScrolled ? 'invert' : ''}`}
+                        className={`h-6 w-6 cursor-pointer }`}
                         onClick={() => setIsMenuOpen(true)}
                     />
                 </div>
