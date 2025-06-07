@@ -8,7 +8,7 @@ import { setDialog } from '../../redux/client/dialogSlice';
 const Navbar = () => {
     const navLinks = [
         { name: 'Home', path: '/' },
-        { name: 'Rooms', path: '/rooms' },
+        { name: 'Apartments', path: '/rooms' },
         { name: 'Experience', path: '/' },
         { name: 'About', path: '/' },
     ];
