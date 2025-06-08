@@ -15,6 +15,10 @@
   font-family: Inter;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .font-nunito {
   font-family: Nunito !important;
 }
