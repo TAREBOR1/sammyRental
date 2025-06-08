@@ -206,7 +206,8 @@ const Navbar = () => {
                     <div className="hidden md:flex items-center gap-4">
                         <img src={assets.searchIcon} alt="search" className={`h-6 w-6 cursor-pointer transition duration-300 ${isScrolled ? 'invert' : ''}`} />
                         <button
-                            onClick={() => navigate('/login')}
+                            onClick={() => {navigate('/login')
+                                 scrollTo(0,0)}}
                             className="bg-[#49B9FF]/50 text-white px-6 py-2 rounded-full transition duration-300 hover:bg-gray-800"
                         >
                             Login
@@ -249,6 +250,7 @@ const Navbar = () => {
                     onClick={() => {
                          navigate('/login')
                         setIsMenuOpen(false);
+                        scrollTo(0,0)
                     }}
                     className="mt-6 bg-[#49B9FF]/50 text-white px-8 py-2.5 rounded-full"
                 >
