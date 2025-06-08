@@ -144,40 +144,40 @@ const Navbar = () => {
     }, [location.pathname]);
 
     // Swipe gesture handling
-    useEffect(() => {
-        let touchStartX = 0;
-        let touchEndX = 0;
+    // useEffect(() => {
+    //     let touchStartX = 0;
+    //     let touchEndX = 0;
 
-        const handleTouchStart = (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        };
+    //     const handleTouchStart = (e) => {
+    //         touchStartX = e.changedTouches[0].screenX;
+    //     };
 
-        const handleTouchMove = (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-        };
+    //     const handleTouchMove = (e) => {
+    //         touchEndX = e.changedTouches[0].screenX;
+    //     };
 
-        const handleTouchEnd = () => {
-            const deltaX = touchEndX - touchStartX;
+    //     const handleTouchEnd = () => {
+    //         const deltaX = touchEndX - touchStartX;
 
-            if (deltaX < -80) {
-                setIsMenuOpen(true);  // Swipe left to open
-            } else if (deltaX > 80) {
-                setIsMenuOpen(false); // Swipe right to close
-            }
-        };
+    //         if (deltaX < -80) {
+    //             setIsMenuOpen(true);  // Swipe left to open
+    //         } else if (deltaX > 80) {
+    //             setIsMenuOpen(false); // Swipe right to close
+    //         }
+    //     };
 
-        if (window.innerWidth <= 768) {
-            window.addEventListener('touchstart', handleTouchStart);
-            window.addEventListener('touchmove', handleTouchMove);
-            window.addEventListener('touchend', handleTouchEnd);
-        }
+    //     if (window.innerWidth <= 768) {
+    //         window.addEventListener('touchstart', handleTouchStart);
+    //         window.addEventListener('touchmove', handleTouchMove);
+    //         window.addEventListener('touchend', handleTouchEnd);
+    //     }
 
-        return () => {
-            window.removeEventListener('touchstart', handleTouchStart);
-            window.removeEventListener('touchmove', handleTouchMove);
-            window.removeEventListener('touchend', handleTouchEnd);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener('touchstart', handleTouchStart);
+    //         window.removeEventListener('touchmove', handleTouchMove);
+    //         window.removeEventListener('touchend', handleTouchEnd);
+    //     };
+    // }, []);
 
     return (
         <>
@@ -219,9 +219,10 @@ const Navbar = () => {
                         <img
                             src={assets.menuIcon}
                             alt="menu"
-                            className="h-6 w-6 cursor-pointer"
+                            className={`h-6 w-6 cursor-pointer ${isScrolled ? 'invert' : ''}`}
                             onClick={() => setIsMenuOpen(true)}
                         />
+                    
                     </div>
                 </div>
             </nav>
