@@ -18,7 +18,7 @@ const App = () => {
   const adminDashboard = location.pathname.includes('/owner')
 
   return (
-    <div className="relative z-0">
+    <div className="relative z-0 overflow-x-hidden">
      {!adminDashboard && <Navbar /> }
        <div className="relative z-10 min-h-[70vh]">
      <Routes>
