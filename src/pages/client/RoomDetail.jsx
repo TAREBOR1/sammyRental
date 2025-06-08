@@ -145,15 +145,28 @@ const RoomDetail = () => {
 
         {/* Apartment video clip */}
 {/* Section heading */}
+{/* Section heading */}
 <h2 className="text-2xl md:text-3xl font-nunito mt-20 mb-6 text-center">
   Virtual Tour: See the Apartment in Action
 </h2>
 
-<div className="relative w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-md">
+<div className="relative w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-md group">
   <video
     id="roomVideo"
-    className="w-full h-auto rounded-xl"
+    className="w-full h-auto rounded-xl cursor-pointer"
     poster={mainImage}
+    onClick={() => {
+      const video = document.getElementById("roomVideo");
+      const playBtn = document.getElementById("customPlayBtn");
+
+      if (!video.paused) {
+        // If playing, pause and revert
+        video.pause();
+        video.currentTime = 0;
+        playBtn.classList.remove("opacity-0");
+        playBtn.classList.add("opacity-100");
+      }
+    }}
   >
     <source src={assets.video} type="video/mp4" />
     Your browser does not support the video tag.
@@ -165,11 +178,12 @@ const RoomDetail = () => {
       const video = document.getElementById("roomVideo");
       const playBtn = document.getElementById("customPlayBtn");
       video.play();
-      playBtn.style.display = "none";
+      playBtn.classList.remove("opacity-100");
+      playBtn.classList.add("opacity-0");
     }}
-    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hover:bg-opacity-60 transition duration-300 group z-10"
+    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-500 opacity-100 z-10"
   >
-    <div className="w-16 h-16 bg-orange-500 group-hover:bg-orange-600 rounded-full flex items-center justify-center shadow-lg">
+    <div className="w-16 h-16 bg-orange-500 hover:bg-orange-600 rounded-full flex items-center justify-center shadow-lg">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-8 w-8 text-white ml-1"
@@ -181,6 +195,7 @@ const RoomDetail = () => {
     </div>
   </button>
 </div>
+
 
 
 
