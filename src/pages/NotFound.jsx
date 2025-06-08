@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom'
 
 
 const NotFound = () => {
-
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to top when the component mounts
+  }, []);
   return (
    <div className="flex mt-10 flex-col items-center justify-center text-sm  py-28 md:pb-35 md:pt-32 px-4 md:px-16 lg:px-24 xl:px-32">
     <h1 className="text-8xl md:text-9xl font-bold text-[#49B9FF]/50">404</h1>
