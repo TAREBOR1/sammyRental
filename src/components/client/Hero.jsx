@@ -1,5 +1,5 @@
 import React from 'react';
-import Login from './Login';
+import Login from '../../pages/Login';
 import { useSelector } from 'react-redux';
 
 const Hero = () => {
@@ -30,14 +30,14 @@ const Hero = () => {
 
       </div>
 
-      {/* Modal Overlay */}
+      {/* Modal Overlay
       {dialog && (
         <div className='fixed inset-0 z-50 flex items-center justify-center bg-transparent bg-opacity-50'>
           <div className='bg-transparent p-6 rounded-lg shadow-lg max-w-md w-full z-50'>
             <Login />
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

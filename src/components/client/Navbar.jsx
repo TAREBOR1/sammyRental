@@ -113,7 +113,7 @@
 
 
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { assets } from '../../assets/assets';
 import { setDialog } from '../../redux/client/dialogSlice';
@@ -128,6 +128,7 @@ const Navbar = () => {
 
     const dispatch = useDispatch();
     const location = useLocation();
+    const navigate = useNavigate()
 
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -205,7 +206,7 @@ const Navbar = () => {
                     <div className="hidden md:flex items-center gap-4">
                         <img src={assets.searchIcon} alt="search" className={`h-6 w-6 cursor-pointer transition duration-300 ${isScrolled ? 'invert' : ''}`} />
                         <button
-                            onClick={() => dispatch(setDialog())}
+                            onClick={() => navigate('/login')}
                             className="bg-[#49B9FF]/50 text-white px-6 py-2 rounded-full transition duration-300 hover:bg-gray-800"
                         >
                             Login
@@ -246,7 +247,7 @@ const Navbar = () => {
 
                 <button
                     onClick={() => {
-                        dispatch(setDialog());
+                         navigate('/login')
                         setIsMenuOpen(false);
                     }}
                     className="mt-6 bg-[#49B9FF]/50 text-white px-8 py-2.5 rounded-full"

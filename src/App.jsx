@@ -12,6 +12,7 @@ import Addroom from './pages/admin/Addroom'
 import Listroom from './pages/admin/Listroom'
 import Dashboard from './pages/admin/Dashboard'
 import NotFound from './pages/NotFound'
+import Login from './pages/Login'
 
 const App = () => {
     const location = useLocation()
@@ -23,6 +24,7 @@ const App = () => {
        <div className="relative z-10 min-h-[70vh]">
      <Routes>
       <Route path='/' element={<Home />}/>
+      <Route path='/login' element={<Login />}/>
       <Route path='/rooms' element={<AllRooms />}/>
       <Route path='/rooms/:id' element={<RoomDetail/>}/>
       <Route path='/my-bookings' element={<Mybookings/>}/>

@@ -1,15 +1,14 @@
 import React from 'react'
-import { assets } from '../../assets/assets'
-import { useDispatch } from 'react-redux'
-import { resetDialog } from '../../redux/client/dialogSlice'
+import { assets } from '../assets/assets'
+
 
 const Login = () => {
-  const dispatch=useDispatch()
+ 
   return (
-  <div className="bg-white relative text-gray-500 max-w-96 mx-4 md:p-6 p-4 text-left text-sm rounded-xl shadow-[0px_0px_10px_0px] shadow-black/10">
-    <button onClick={()=>{dispatch(resetDialog())}} className='absolute top-3 right-3 rounded-full cursor-pointer'>
-      <img src={assets.closeIcon} className='h-4 ' alt="" />
-    </button>
+    <div className='flex items-center justify-center py-28 md:pb-35 md:pt-32 px-4 md:px-16 lg:px-24 xl:px-32'>
+
+  <div className="bg-white  text-gray-500 max-w-96 p-5 text-left text-sm rounded-xl shadow-[0px_0px_10px_0px] shadow-black/10">
+   
       <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">Welcome back</h2>
       <form>
         <input
@@ -46,6 +45,7 @@ const Login = () => {
         Log in with Google
       </button>
     </div>
+      </div>
   )
 }
 
