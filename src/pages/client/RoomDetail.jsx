@@ -9,6 +9,9 @@ const RoomDetail = () => {
   const [room, setRoom] = useState(null);
   const [mainImage, setMainImage] = useState(null);
 
+   useEffect(() => {
+      window.scrollTo(0, 0); // Scroll to top when the component mounts
+    }, []);
   useEffect(() => {
     const room = roomsDummyData.find((room) => room._id === id);
     room && setRoom(room);

@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { assets } from '../assets/assets'
 
 
 const Login = () => {
+   useEffect(() => {
+      window.scrollTo(0, 0); // Scroll to top when the component mounts
+    }, []);
  
   return (
     <div className='flex items-center justify-center py-28 md:pb-35 md:pt-32 px-4 md:px-16 lg:px-24 xl:px-32'>
